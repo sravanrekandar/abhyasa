@@ -2,7 +2,7 @@
 from flask import Flask
 from flask.json import jsonify
 from flask_restful import Resource, Api
-from .app.DogBreedDetector import DogBreedDetector
+from app.DogBreedDetector import DogBreedDetector
 
 UPLOAD_FOLDER = 'static/uploads'
 
