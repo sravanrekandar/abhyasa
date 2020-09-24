@@ -1,11 +1,10 @@
 """Flask App Entry."""
-import os
-from flask import Flask, flash, request, url_for, jsonify
-from werkzeug.utils import secure_filename
+from flask import Flask
+from flask.json import jsonify
 from flask_restful import Resource, Api
 from .app.DogBreedDetector import DogBreedDetector
+
 UPLOAD_FOLDER = 'static/uploads'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 #  Create a Flask WSGI application
 app = Flask(
@@ -15,61 +14,26 @@ app = Flask(
     template_folder='templates'
 )
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.secret_key = 'super secret key'
+app.config['JSON_SORT_KEYS'] = False
 api = Api(app)
 
 
-class HelloWorld(Resource):
+class Home(Resource):
+    """Root Route."""
+
     def get(self):
-        return {'hello': 'world'}
+        """Send The Api list."""
+        return jsonify({
+            'name': 'Abhyasa App',
+            'apis': {
+                'POST /dog-breed-detector': 'Accepts a file - dog pic, returns a json with dog\'s breed name'
+            }
+        })
 
 
-api.add_resource(HelloWorld, '/')
+api.add_resource(Home, '/')
 api.add_resource(DogBreedDetector, '/dog-breed-detector')
-
-
-# @app.route("/")
-# @app.route("/home/")
-# def home():
-#     """Home Page."""
-#     title = "Sravan's Machine Learning Demos"
-#     return f"""
-#         <!Docstring html>
-#         <html>
-#             <header>
-#                 <title>{title}</title>
-#             </header>
-#             <body>
-#                 <h1>{title}</h1>
-#                 <p>Home page content here.</p>
-#             </body>
-#         </html>
-#     """
-
-
-# @app.route('/dog-breed-detector', methods=['POST'])
-# def dog_breed_detector():
-#
-
-
-# @app.errorhandler(404)
-# def page_not_found(e):
-#     """Not Found Page."""
-#     title = "Flask Drive Page not found"
-#     return f"""
-#         <!Docstring html>
-#         <html>
-#             <header>
-#                 <title>{title}</title>
-#             </header>
-#             <body>
-#                 <h1>{title}</h1>
-#                 <p>
-#                     You seem to be lost!
-#                     Please use navigation to go to right page
-#                 </p>
-#             </body>
-#         </html>
-#     """
 
 
 if __name__ == "__main__":
