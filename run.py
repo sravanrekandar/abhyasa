@@ -3,6 +3,7 @@ from flask import Flask
 from flask.json import jsonify
 from flask_restful import Resource, Api
 from app.DogBreedDetector import DogBreedDetector
+from app.download_models import download_dog_breed_model
 
 UPLOAD_FOLDER = 'static/uploads'
 
@@ -35,6 +36,7 @@ class Home(Resource):
 api.add_resource(Home, '/')
 api.add_resource(DogBreedDetector, '/dog-breed-detector')
 
+download_dog_breed_model()
 
 if __name__ == "__main__":
     app.run()
