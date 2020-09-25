@@ -1,3 +1,4 @@
+https://download.pytorch.org/whl/torch_stable.html
 gunicorn==20.0.4
 flask==1.1.2
 flask-restful==0.3.8
