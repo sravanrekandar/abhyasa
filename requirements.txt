@@ -6,6 +6,6 @@ coloredlogs==2
 werkzeug==1.0.1
 IPython==7.18.1
 # https://download.pytorch.org/whl/cpu/torch-1.6.0%2Bcpu-cp36-cp36m-linux_x86_64.whl
-torch==1.6.0%2Bcpu
-torchvision==0.7.0%2Bcpu
+torch==1.6.0+cpu
+torchvision==0.7.0+cpu
 fastai==2.0.13
