@@ -2,8 +2,9 @@
 from flask import Flask
 from flask.json import jsonify
 from flask_restful import Resource, Api
-from app.DogBreedDetector import DogBreedDetector
-from app.download_models import download_dog_breed_model
+from flask_cors import CORS
+from apps.DogBreedDetector import DogBreedDetector
+from apps.download_models import download_dog_breed_model
 
 UPLOAD_FOLDER = 'static/uploads'
 
@@ -18,6 +19,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'super secret key'
 app.config['JSON_SORT_KEYS'] = False
 api = Api(app)
+cors = CORS(app, resources={r"/*": {"origins": ["*"]}})
 
 
 class Home(Resource):

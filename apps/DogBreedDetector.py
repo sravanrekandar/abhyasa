@@ -60,7 +60,7 @@ class DogBreedDetector(Resource):
         """Dog breed detector."""
         # check if the post request has the file part
         logger.info("------Dog breed detector------")
-        logger.info('request.files', str(request.files))
+        logger.info('request.files = ' + str(request.files))
         if 'File' not in request.files:
             flash('No file part')
             return jsonify({

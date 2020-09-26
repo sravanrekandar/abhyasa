@@ -1,11 +1,18 @@
 #!/bin/bash
-# python -m venv env
-# source env/bin/activate
+echo "-----Abhyasa App-----"
+echo "Creating virtual environment..."
+python -m venv env
 
-poetry shell
-poetry install
+echo "Activating virtual environment..."
+source env/bin/activate
+echo "---------------------------------"
 
+echo "Installing Dependencies..."
+python -m pip install -r requirements-dev.txt
+
+echo "---------------------------------"
+echo "Starting App..."
 export FLASK_APP=run.py
 export FLASK_ENV=development
 
-flask run --port 8085
+FLASK_DEBUG=1 && python -m flask run --port 8085

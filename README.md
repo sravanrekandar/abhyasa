@@ -7,6 +7,13 @@ mostly created while I study Machine Learning
 
 ## Development Setup
 
+There are dependency management systems you will find in this repo.
+
+- **requirement.txt** used by pip
+  - We need this to support the deployment environment is Linux on Heroku
+- **pyproject.toml** used by poetry
+  - We need this to run the app on Mac - this is my development environment
+
 [Read here](DEVELOPMENT_SETUP.md)
 
 ### Applications
