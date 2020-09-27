@@ -9,3 +9,4 @@ werkzeug==1.0.1
 IPython==7.18.1
 fastai==2.0.13
 requests==2.24.0
+flask_cors
