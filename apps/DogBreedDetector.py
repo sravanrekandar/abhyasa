@@ -83,11 +83,13 @@ class DogBreedDetector(Resource):
         if file and self.allowed_file(file.filename):
             filename = secure_filename(file.filename)
             result = self.get_dog_details(file)
-
+            pred = result['pred']
+            if(pred == 'Dobar man'):
+                pred = 'Doberman'
             if result['success']:
                 return jsonify({
                     'success': True,
-                    'breed': result['pred'],
+                    'breed': pred,
                     'message': 'Received file ' + filename
                 })
             else:
