@@ -86,6 +86,9 @@ class DogBreedDetector(Resource):
             pred = result['pred']
             if(pred == 'Dobar man'):
                 pred = 'Doberman'
+            elif(pred == 'Dolmation'):
+                pred = 'Dalmatian'
+
             if result['success']:
                 return jsonify({
                     'success': True,
