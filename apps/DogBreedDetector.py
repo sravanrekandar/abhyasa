@@ -84,9 +84,9 @@ class DogBreedDetector(Resource):
             filename = secure_filename(file.filename)
             result = self.get_dog_details(file)
             pred = result['pred']
-            if(pred == 'Dobar man'):
+            if(pred == 'dobar man'):
                 pred = 'Doberman'
-            elif(pred == 'Dolmation'):
+            elif(pred == 'dolmation'):
                 pred = 'Dalmatian'
 
             if result['success']:
