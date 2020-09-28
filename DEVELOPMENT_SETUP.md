@@ -35,7 +35,6 @@ So to keep the dependencies list separate for the two environments, we are using
 ## Prerequisites
 
 - Python >= 3.7
-- [Poetry](https://python-poetry.org/)
 
 ## Getting Started
 
@@ -56,3 +55,7 @@ chmod 777 start_dev.sh
 ```bash
 ./start_dev.sh
 ```
+
+## Deployment
+
+This app is configured with github actions. The actions will take care to deploy the app to [Heroku](heroku.com)

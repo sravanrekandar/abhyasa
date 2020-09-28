@@ -5,16 +5,13 @@ Abhyasa = Learning (in Sanskrit Language)
 This is a repository of machine learning solutions(Exercise outcomes),
 mostly created while I study Machine Learning
 
-## Development Setup
+## Demo
 
-There are dependency management systems you will find in this repo.
+You can view the app in action here **[https://sravanrekandar.github.io/abhyasa-client/](https://sravanrekandar.github.io/abhyasa-client/)**
 
-- **requirement.txt** used by pip
-  - We need this to support the deployment environment is Linux on Heroku
-- **pyproject.toml** used by poetry
-  - We need this to run the app on Mac - this is my development environment
+## [Development Setup](DEVELOPMENT_SETUP.md)
 
-[Read here](DEVELOPMENT_SETUP.md)
+[Follow the instructions here](DEVELOPMENT_SETUP.md)
 
 ### Applications
 
